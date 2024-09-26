@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | Sports Pulse | SRM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sports Pulse - Feedback</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="register.html">Registration</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="feedback" class="feedback-section">
+        <div class="container">
+            <h2>Give Us Your Feedback</h2>
+            <p>We value your feedback! Please let us know how we can improve your experience on our website.</p>
+            <form action="#" method="post" class="feedback-form">
+                <label for="feedback-name">Name:</label>
+                <input type="text" id="feedback-name" name="name" required>
+
+                <label for="feedback-email">Email:</label>
+                <input type="email" id="feedback-email" name="email" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                
+
+                <label for="feedback-comments">Your Feedback:</label>
+                <textarea id="feedback-comments" name="comments" rows="5" required></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sports Pulse | SRM | Contact us at: sports@srm.edu</p>
+        </div>
+    </footer>
+</body>
+</html>
