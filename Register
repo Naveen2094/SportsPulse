@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for upcoming sports events at SRM University through Sports Pulse. Choose from a variety of events including football, basketball, kabaddi, and volleyball.">
+    <meta name="keywords" content="Sports Pulse, SRM, Sports Events, Register, Volleyball, Football, Basketball, Kabaddi">
+    <title>Register | Sports Pulse | SRM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sports Pulse - Registration</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" aria-label="Home">Home</a></li>
+                    <li><a href="#register" aria-label="Register">Register</a></li>
+                    <li><a href="#contact" aria-label="Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Registration Section -->
+    <section id="register" class="registration-section">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <ul class="event-list">
+                <li>Volleyball Tournament Finals - October 5, 2024</li>
+                <li>Football Match - September 20, 2024</li>
+                <li>Kabaddi Invitational Match - October 10, 2024</li>
+                <li>Basketball Exhibition Game - November 1, 2024</li>
+            </ul>
+
+            <h2>Register for an Event</h2>
+            <form action="#" method="post" class="registration-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <label for="event">Select Event:</label>
+                <select id="event" name="event" required>
+                    <option value="" disabled selected>Choose an event</option>
+                    <option value="football">Football Match</option>
+                    <option value="basketball">Basketball Exhibition Game</option>
+                    <option value="kabaddi">Kabaddi Invitational Match</option>
+                    <option value="volleyball">Volleyball Tournament Finals</option>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p><strong>Dr. R. Mohana Krishnan</strong></p>
+            <p><strong>Email:</strong> <a href="mailto:director.sports@srmist.edu.in" aria-label="Email Dr. Mohana Krishnan">director.sports@srmist.edu.in</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+914427417281" aria-label="Call Dr. Mohana Krishnan">+91-44-2741-7281</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sports Pulse | SRM</p>
+        </div>
+    </footer>
+</body>
+</html>
