@@ -2,53 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback | Sports Pulse | SRM</title>
+    <title>Feedback - Sports Pulse</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Sports Pulse - Feedback</h1>
+            <h1>Sports Pulse</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="register.html">Registration</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="upcoming-events.html">Upcoming Events</a></li>
+                    <li><a href="register.html">Register</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="feedback" class="feedback-section">
+    <section class="feedback-section">
         <div class="container">
             <h2>Give Us Your Feedback</h2>
-            <p>We value your feedback! Please let us know how we can improve your experience on our website.</p>
-            <form action="#" method="post" class="feedback-form">
-                <label for="feedback-name">Name:</label>
-                <input type="text" id="feedback-name" name="name" required>
+            <form id="feedback-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
 
-                <label for="feedback-email">Email:</label>
-                <input type="email" id="feedback-email" name="email" required>
-                
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" required>
 
-                
-
-                <label for="feedback-comments">Your Feedback:</label>
-                <textarea id="feedback-comments" name="comments" rows="5" required></textarea>
+                <label for="message">Your Feedback</label>
+                <input id="message" name="message" required>
 
                 <button type="submit">Submit Feedback</button>
             </form>
+
+            <!-- Message Display Area -->
+            <div id="feedback-message"></div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Sports Pulse | SRM | Contact us at: sports@srm.edu</p>
-        </div>
-    </footer>
+    <script>
+        $(document).ready(function(){
+            $("#feedback-form").submit(function(event){
+                event.preventDefault(); // Prevent form from refreshing the page
+                
+                $.ajax({
+                    type: "POST",
+                    url: "submit_feedback.php",
+                    data: $(this).serialize(),
+                    success: function(response){
+                        $("#feedback-message").html(response).css("color", "green"); // Show success message
+                        $("#feedback-form")[0].reset(); // Clear form fields
+                    },
+                    error: function(){
+                        $("#feedback-message").html("Something went wrong!").css("color", "red");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
