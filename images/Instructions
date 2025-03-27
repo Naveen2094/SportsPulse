@@ -1,0 +1,51 @@
+Step 1: Install Required Software
+Download & Install XAMPP (for PHP & MySQL)
+
+Download XAMPP
+
+Install it and start Apache & MySQL from the XAMPP Control Panel.
+
+Step 2: Download or Clone the Project
+Option 1: Clone from GitHub (Recommended)
+Open Git Bash or Command Prompt.
+
+Run the following command:
+git clone https://github.com/your-username/SportsPulse.git
+Option 2: Download Manually
+Download the ZIP file from GitHub.
+
+Extract it and move the folder to:
+
+C:\xampp\htdocs\
+Step 3: Set Up the Database
+Open phpMyAdmin in your browser by visiting:
+
+http://localhost/phpmyadmin/
+Click New and create a database named:
+
+sportspulse_db
+Import the sportspulse_db.sql file:
+
+Click Import in phpMyAdmin.
+
+Select sportspulse_db.sql from the project folder.
+
+Click Go to execute.
+
+Step 4: Configure Database Connection
+Open the db_connect.php file in the project folder.
+
+Ensure the database credentials match your setup:
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "sportspulse_db";
+Step 5: Start the Project
+Open XAMPP Control Panel.
+
+Start Apache and MySQL.
+
+Open a browser and visit:
+
+http://localhost/SportsPulse/
