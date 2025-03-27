@@ -1,7 +1,7 @@
-🏆 Sports Pulse
+🏆 Sports Pulse-
 A College Sports Event Management System
 
-📌 Project Description
+📌 Project Description-
 Sports Pulse is a web-based platform designed to manage and showcase sports events happening at College. Users can register for upcoming events, provide feedback, and stay updated with past event news.
 
 📂 Features
