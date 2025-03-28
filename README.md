@@ -1,7 +1,9 @@
 🏆 Sports Pulse-
+
 A College Sports Event Management System
 
 📌 Project Description-
+
 Sports Pulse is a web-based platform designed to manage and showcase sports events happening at College. Users can register for upcoming events, provide feedback, and stay updated with past event news.
 
 📂 Features
@@ -54,6 +56,7 @@ Commit changes (git commit -m "Added new feature").
 Push to GitHub and create a pull request.
 
 📜 License
+
 This project is open-source and free to use.
 
 📬 Contact
