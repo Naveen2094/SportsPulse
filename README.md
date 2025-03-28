@@ -60,6 +60,8 @@ Push to GitHub and create a pull request.
 This project is open-source and free to use.
 
 📬 Contact
+
 📧 Email: naveenkumarp2094@gmail.com
+
 💻 LinkedIn:https://www.linkedin.com/in/naveenkumarp20/
 
