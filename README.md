@@ -1,67 +1,78 @@
-🏆 Sports Pulse-
+# 🏀 Sports Pulse - SRM College Sports Portal
 
-A College Sports Event Management System
+**Sports Pulse** is a responsive and elegant web platform to display and manage **sports events** at **SRM College**. It covers everything from past match reports to upcoming event registrations — all in a black-and-white themed UI.
 
-📌 Project Description-
+---
 
-Sports Pulse is a web-based platform designed to manage and showcase sports events happening at College. Users can register for upcoming events, provide feedback, and stay updated with past event news.
+## 🎯 Project Objectives
 
-📂 Features
-✅ Display past sports event news.
-✅ View and register for upcoming sports events.
-✅ Submit feedback about events.
-✅ Admin can manage event details.
+- Showcase past sports events with images and descriptions.
+- Display upcoming sports events with registration links.
+- Provide a clean, student-focused user experience.
+- Mobile app version (in development) available for on-the-go updates.
 
-🛠️ Installation & Setup
-1️⃣ Install Required Software
-XAMPP – Download Here
+---
 
-git clone https://github.com/Naveen2094/SportsPulse.git
-Or, manually download the ZIP, extract it, and move it to:
+## 🛠️ Tech Stack
 
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: PHP
+- **Database**: MySQL (via XAMPP/phpMyAdmin)
+- **Mobile App**: Coming soon (React Native)
 
-C:\xampp\htdocs\SportsPulse
-3️⃣ Set Up Database
-Open phpMyAdmin (http://localhost/phpmyadmin/).
+---
 
-Create a new database named:
+## 🗄️ Database Structure
 
-sportspulse_db
-Import the sportspulse_db.sql file from the project folder.
+**Database Name**: `sports_pulse_db`
 
-4️⃣ Configure Database Connection
-Open db_connect.php and update credentials if needed:
+### 1. `events` Table
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sportspulse_db";
-5️⃣ Run the Project
-Start XAMPP and enable Apache & MySQL.
+| Column       | Type           | Description                       |
+|--------------|----------------|-----------------------------------|
+| id           | int(11)        | Auto Increment (PK)               |
+| name         | varchar(100)   | Event Name                        |
+| date         | date           | Date of the Event                 |
+| venue        | varchar(100)   | Event Venue                       |
+| type         | varchar(50)    | Event Type (Football/Basketball...) |
+| description  | text           | Detailed info about the event     |
+| image_path   | varchar(255)   | Optional: path to event image     |
 
-Open your browser and go to:
+---
 
+### 2. `registrations` Table
 
-http://localhost/SportsPulse/
+| Column     | Type           | Description                  |
+|------------|----------------|------------------------------|
+| id         | int(11)        | Auto Increment (PK)          |
+| name       | varchar(100)   | Student Name                 |
+| email      | varchar(100)   | Email                        |
+| event_id   | int(11)        | Linked to `events.id`        |
+| phone      | varchar(10)    | Contact number               |
 
-🤝 Contributing
-Want to improve Sports Pulse? Follow these steps:
+---
 
-Fork the repository.
+## 🧩 Features
 
-Create a new branch (feature-new).
+✅ Home Page with Latest News & Past Events  
+✅ Upcoming Events Section (with date & venue displayed neatly)  
+✅ Event Registration Page  
+✅ Fully Responsive UI (Black & White Theme)  
+✅ Mobile App (under development - displays only SRM sports news/events)  
+✅ Backend in PHP with MySQL
 
-Commit changes (git commit -m "Added new feature").
+---
 
-Push to GitHub and create a pull request.
+## 🚀 How to Run
 
-📜 License
+1. Install **XAMPP**.
+2. Place the `sports_pulse` folder inside the `htdocs` directory.
+3. Start **Apache** and **MySQL** via XAMPP.
+4. Open **phpMyAdmin** and:
+   - Create a database: `sports_pulse_db`
+   - Import or manually create the `events` and `registrations` tables.
+5. Open your browser and go to:  
+   `http://localhost/sports_pulse`
 
-This project is open-source and free to use.
-
-📬 Contact
-
-📧 Email: naveenkumarp2094@gmail.com
-
-💻 LinkedIn:https://www.linkedin.com/in/naveenkumarp20/
+---
 
