@@ -1,6 +1,6 @@
 # 🏀 Sports Pulse - SRM College Sports Portal
 
-**Sports Pulse** is a responsive and elegant web platform to display and manage **sports events** at **SRM College**. It covers everything from past match reports to upcoming event registrations — all in a black-and-white themed UI.
+**Sports Pulse** is a responsive and elegant web platform to display and manage **sports events** at **SRM College**. It covers everything from past match reports to upcoming event registrations.
 
 ---
 
@@ -9,7 +9,6 @@
 - Showcase past sports events with images and descriptions.
 - Display upcoming sports events with registration links.
 - Provide a clean, student-focused user experience.
-- Mobile app version (in development) available for on-the-go updates.
 
 ---
 
@@ -18,7 +17,6 @@
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: PHP
 - **Database**: MySQL (via XAMPP/phpMyAdmin)
-- **Mobile App**: Coming soon (React Native)
 
 ---
 
