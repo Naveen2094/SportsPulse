@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Event</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo-group">
+                <div class="logo">
+                    <img src="SPlogo.jpg" alt="Sports Pulse Logo">
+                </div>
+                <h1>SPORTS PULSE <span style="font-weight: 500; font-size: 0.7em; color: #ccc;"></span></h1>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="upcoming-events.html">Upcoming Events</a></li>
+                    <li><a href="register.html" class="active btn-primary">Register Now</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="registration-section">
+            <div class="container">
+                <div class="form-card">
+                    <h2>Register for an Event</h2>
+
+                    <div id="message" class="message-area"></div>
+                    
+                    <form class="registration-form" id="registrationForm">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">SRM Email</label>
+                            <input type="email" id="email" name="email" required placeholder="name@srmist.edu.in">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="9876543210">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="event">Select Event</label>
+                            <select id="event" name="event" required>
+                                <option value="" disabled selected>-- Choose an Event --</option>
+                                <option value="football">Football Championship</option>
+                                <option value="cricket">Inter-College Cricket Tournament</option>
+                                <option value="basketball">Basketball League Finals</option>
+                                <option value="volleyball">Volleyball Tournament Finals</option>
+                                <option value="kabaddi">SRM Kabaddi Cup</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" id="submitBtn">
+                            Submit Registration
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sports Pulse | SRM College. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById("registrationForm");
+            const messageDiv = document.getElementById("message");
+            const eventSelect = document.getElementById("event");
+
+            // 1. Pre-select event based on URL parameter (from upcoming-events.html)
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventParam = urlParams.get('event');
+            if (eventParam) {
+                eventSelect.value = eventParam.toLowerCase();
+            }
+
+            // 2. AJAX Submission Handling for better UX
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Stop native form submit
+
+                const submitBtn = document.getElementById("submitBtn");
+                const originalText = submitBtn.textContent;
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Registering...';
+                messageDiv.innerHTML = '<p class="loading">Processing your registration...</p>';
+
+                let formData = new FormData(this);
+
+                fetch("submit_register.php", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // Assuming PHP returns a clean 'Success' or 'Error' message
+                    if (data.includes('Success')) {
+                        messageDiv.innerHTML = '<p class="success-message">✅ Registration successful!.</p>';
+                        form.reset(); // Clear form on success
+                    } else {
+                        messageDiv.innerHTML = '<p class="error-message">⚠️ Registration failed: ' + data + '</p>';
+                    }
+                })
+                .catch(error => {
+                    messageDiv.innerHTML = '<p class="error-message">❌ An error occurred during submission. Please try again.</p>';
+                    console.error("Error:", error);
+                })
+                .finally(() => {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
