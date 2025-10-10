@@ -3,66 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcoming Events - Sports Pulse</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Upcoming Events</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
     <header>
-        <div class="container">
-            <h1>Sports Pulse</h1>
+        <div class="container header-container">
+            <div class="logo-group">
+                <div class="logo">
+                    <img src="SPlogo.jpg" alt="Sports Pulse Logo">
+                </div>
+                <h1>SPORTS PULSE <span style="font-weight: 500; font-size: 0.7em; color: #ccc;"></span></h1>
+            </div>
+            
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="upcoming-events.html" class="active">Upcoming Events</a></li>
+                    <li><a href="register.html" class="btn-primary">Register Now</a></li>
                     <li><a href="feedback.html">Feedback</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="events-section">
+    <main>
+        <section class="events-section">
+            <div class="container">
+                <h2>Upcoming Sports Events</h2>
+                
+                <div class="event-grid">
+
+                    <div class="event-card">
+                        <span class="sport-icon">⚽</span>
+                        <h3>Football Championship</h3>
+                        <p class="event-detail"><span class="label">Date:</span> April 10, 2025</p>
+                        <p class="event-detail"><span class="label">Venue:</span> SRM Football Ground</p>
+                        <button class="btn-primary" onclick="location.href='register.html?event=football'">Register Now</button>
+                    </div>
+
+                    <div class="event-card">
+                        <span class="sport-icon">🏏</span>
+                        <h3>Inter-College Cricket Tournament</h3>
+                        <p class="event-detail"><span class="label">Date:</span> April 15, 2025</p>
+                        <p class="event-detail"><span class="label">Venue:</span> SRM Cricket Ground</p>
+                        <button class="btn-primary" onclick="location.href='register.html?event=cricket'">Register Now</button>
+                    </div>
+
+                    <div class="event-card">
+                        <span class="sport-icon">🏀</span>
+                        <h3>Basketball League Finals</h3>
+                        <p class="event-detail"><span class="label">Date:</span> April 20, 2025</p>
+                        <p class="event-detail"><span class="label">Venue:</span> SRM Indoor Stadium</p>
+                        <button class="btn-primary" onclick="location.href='register.html?event=basketball'">Register Now</button>
+                    </div>
+
+                    <div class="event-card">
+                        <span class="sport-icon">🏐</span>
+                        <h3>Volleyball Tournament Finals</h3>
+                        <p class="event-detail"><span class="label">Date:</span> April 25, 2025</p>
+                        <p class="event-detail"><span class="label">Venue:</span> SRM Main Stadium</p>
+                        <button class="btn-primary" onclick="location.href='register.html?event=volleyball'">Register Now</button>
+                    </div>
+
+                    <div class="event-card">
+                        <span class="sport-icon">🤼</span>
+                        <h3>SRM Kabaddi Cup</h3>
+                        <p class="event-detail"><span class="label">Date:</span> April 30, 2025</p>
+                        <p class="event-detail"><span class="label">Venue:</span> SRM Sports Complex</p>
+                        <button class="btn-primary" onclick="location.href='register.html?event=kabaddi'">Register Now</button>
+                    </div>
+
+                    <div class="event-card cta-card">
+                        <h3>Don't See Your Sport?</h3>
+                        <p>Suggest a new event or start forming your team today!</p>
+                        <a href="feedback.html" class="btn-accent" style="text-decoration: none;">Give Feedback</a>
+                    </div>
+                    
+                </div>
+            </div>   
+        </section>
+    </main>
+
+    <footer>
         <div class="container">
-            <h2>Upcoming Events</h2>
-            <div class="event">
-                <h3>Football Championship</h3>
-                <p><strong>Date:</strong> April 10, 2025</p>
-                <p><strong>Venue:</strong> SRM Football Ground</p>
-                <button onclick="location.href='register.html?event=football'">Register</button>
-            </div>
-
-            <!-- Cricket Event -->
-            <div class="event">
-                <h3>Inter-College Cricket Tournament</h3>
-                <p><strong>Date:</strong> April 15, 2025</p>
-                <p><strong>Venue:</strong> SRM Cricket Ground</p>
-                <button onclick="location.href='register.html?event=cricket'">Register</button>
-            </div>
-
-            <!-- Basketball Event -->
-            <div class="event">
-                <h3>Basketball League Finals</h3>
-                <p><strong>Date:</strong> April 20, 2025</p>
-                <p><strong>Venue:</strong> SRM Indoor Stadium</p>
-                <button onclick="location.href='register.html?event=basketball'">Register</button>
-            </div>
-
-            <!-- Volleyball Event -->
-            <div class="event">
-                <h3>Volleyball Tournament Finals</h3>
-                <p><strong>Date:</strong> April 25, 2025</p>
-                <p><strong>Venue:</strong> SRM Main Stadium</p>
-                <button onclick="location.href='register.html?event=volleyball'">Register</button>
-            </div>
-
-            <!-- Kabaddi Event -->
-            <div class="event">
-                <h3>SRM Kabaddi Cup</h3>
-                <p><strong>Date:</strong> April 30, 2025</p>
-                <p><strong>Venue:</strong> SRM Sports Complex</p>
-                <button onclick="location.href='register.html?event=kabaddi'">Register</button>
-            </div>
-
-        </div>   
-    </section>
+            <p>&copy; 2025 Sports Pulse | SRM College. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
