@@ -3,95 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports Pulse | SRM</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sports Pulse</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <header>
-        <div class="container">
-            <div class="logo">
-                <img src="SPlogo.jpg" alt="Sports Pulse Logo">
+        <div class="container header-container">
+            
+            <div class="logo-group">
+                <div class="logo">
+                    <img src="SPlogo.jpg" alt="Sports Pulse Logo">
+                </div>
+                <h1>SPORTS PULSE <span style="font-weight: 500; font-size: 0.7em; color: #ccc;"></span></h1>
             </div>
-            <h1>Sports Pulse</h1>
+            
             <nav>
                 <ul>
-                    <li><a href="upcoming-events.html">Upcoming Events</a></li>
-                    <li><a href="register.html">Register</a></li>
-                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="index.html" class="active" data-page="home">Home</a></li>
+                    <li><a href="upcoming-events.html" data-page="events">Upcoming Events</a></li>
+                    <li><a href="register.html" class="btn-primary" data-page="register" style="text-decoration: none;">Register Now</a></li>
+                    <li><a href="feedback.html" data-page="feedback">Feedback</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
 
-    <section class="news-section">
+    <section class="hero-section" style="background-color: var(--color-primary); color: var(--color-text-light); text-align: center; padding: 5rem 0 3rem;">
         <div class="container">
-            <h2 class="latest-news-header">Latest Sports News</h2>
-       
-            <div class="news-box">
-                <img src="Football1.jpg" alt="Football Team" class="news-img">
-                <h3>SRMIST Men’s Football Team Wins Gold</h3>
-                <p>SRMIST Men’s Football Team secured the <strong>Gold Medal</strong> in the prestigious
-                    <strong>Founder Chancellor Trophy Football Tournament</strong> held at Hindustan University, Chennai.
-                    From <strong>September 25th to 27th, 2023</strong>, SRMIST’s football squad showcased their
-                    exceptional teamwork, agility, and sportsmanship throughout the tournament.
-                    Their stellar performance culminated in a <strong>well-deserved victory</strong>, securing the
-                    Gold Medal and adding another feather to SRMIST’s cap of sporting achievements.
-                </p>
-            </div></p>
-            </div>
-
-            <div class="news-box">
-                <img src="Basketball.jpg" alt="Basketball Team" class="news-img">
-                <h3>SRMIST Basketball Team Triumphs Over Vels University</h3>
-                <p>
-                    SRMIST’s <strong>Basketball Team</strong> showcased their dominance by securing a
-                    <strong>thrilling victory</strong> against <strong>Vels University</strong> in a highly competitive match.
-                    The game, held at <strong>Vels University Campus</strong>, saw SRMIST’s players demonstrating
-                    exceptional <strong>team coordination, precision shooting, and strong defense</strong>.
-                </p>
-                <p>
-                    Led by their captain <strong>Prashanth</strong>, the team maintained a solid lead throughout the match,
-                    finishing with a <strong>final score of 88-74</strong>. The match's MVP, <strong>Madhan</strong>,
-                    delivered an outstanding performance, scoring <strong>25 points</strong> and making crucial assists.
-                </p>
-                <p>
-                    With this victory, the <strong>SRMIST Basketball Team</strong> has once again proven their strength
-                    in collegiate basketball, continuing their legacy of excellence in sports.
-                </p>
-            </div>
-
-            <div class="news-box">
-                <img src="Kabbadi.jpg" alt="Kabaddi Team" class="news-img">
-                <h3>SRMIST Kabaddi Team Secures Bronze at Khelo India University Games</h3>
-    <p>
-        The <strong>pride of SRM</strong> is our <strong>Pro Kabaddi Team</strong>, which has once again proven
-        its excellence on the national stage. The <strong>SRMIST Kabaddi (Men) Team</strong> secured the
-        <strong>Bronze Medal</strong> at the <strong>3rd Khelo India University Games-2022</strong>,
-        organized by <strong>MYAS AIU & Sports Authority of India</strong>.
-    </p>
-    <p>
-        The tournament, held at <strong>Noida, New Delhi</strong>, from <strong>May 23rd to 26th, 2023</strong>,
-        witnessed <strong>SRM’s unstoppable performance</strong>. Displaying remarkable
-        <strong>agility, strength, and strategic gameplay</strong>, the team <strong>dominated the competition</strong>
-        and secured a prestigious spot on the podium.
-    </p>
-    <p>
-        This victory marks another <strong>historic achievement</strong> for <strong>SRMIST</strong>,
-        showcasing the university’s dedication to sports excellence and the relentless spirit of its athletes.
-    </p>
-                
-            </div>
-
+            <h2 style="font-size: 3rem; margin-bottom: 15px; border-bottom: none; color: var(--color-text-light);">
+                Fuel Your Game. Register Now.
+            </h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; opacity: 0.9;">
+                Discover the latest events, register for your favorite sports, and contribute to SRM's legacy of athletic excellence.
+            </p>
+            <a href="register.html" class="btn-accent" style="padding: 15px 40px; border-radius: 50px;">
+                START REGISTRATION
+            </a>
         </div>
     </section>
 
+    <main id="main-content">
+
+        <section class="news-section">
+            <div class="container">
+                <h2 class="latest-news-header">Latest Campus News</h2>
+            
+                <div class="news-grid">
+                    
+                    <a href="#" class="news-box" data-modal="football-modal">
+                        <img src="Football1.jpg" alt="SRMIST Men’s Football Team" class="news-img">
+                        <div class="news-content">
+                            <h3>SRMIST Men’s Football Team Wins Gold</h3>
+                            <p style="font-size: 0.85rem; color: #777; margin-bottom: 10px;">Founder Chancellor Trophy | Sep 2023</p>
+                            <p class="summary-text">
+                                SRMIST Men’s Football Team secured the Gold Medal in the prestigious Founder Chancellor Trophy Football Tournament held at Hindustan University, Chennai... 
+                            </p>
+                            <span style="color: var(--color-primary); font-weight: 600; display: block; margin-top: 10px; text-decoration: none;">Read More &rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="news-box" data-modal="basketball-modal">
+                        <img src="Basketball.jpg" alt="SRMIST Basketball Team" class="news-img">
+                        <div class="news-content">
+                            <h3>SRMIST Basketball Team Triumphs Over Vels University</h3>
+                            <p style="font-size: 0.85rem; color: #777; margin-bottom: 10px;">Final Score: 88-74</p>
+                            <p class="summary-text">
+                                SRMIST’s Basketball Team showcased their dominance by securing a thrilling victory against Vels University... 
+                            </p>
+                            <span style="color: var(--color-primary); font-weight: 600; display: block; margin-top: 10px; text-decoration: none;">Read More &rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="news-box" data-modal="kabaddi-modal">
+                        <img src="Kabbadi.jpg" alt="SRMIST Kabaddi Team" class="news-img">
+                        <div class="news-content">
+                            <h3>SRMIST Kabaddi Secures Bronze at Khelo India</h3>
+                            <p style="font-size: 0.85rem; color: #777; margin-bottom: 10px;">Khelo India University Games-2022</p>
+                            <p class="summary-text">
+                                The **SRMIST Men's Kabaddi Team secured the Bronze Medal at the 3rd Khelo India University Games-2022... 
+                            </p>
+                            <span style="color: var(--color-primary); font-weight: 600; display: block; margin-top: 10px; text-decoration: none;">Read More &rarr;</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <div id="football-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <img src="Football1.jpg" alt="Football Team" class="modal-img">
+                <h3>SRMIST Men’s Football Team Wins Gold</h3>
+                <p class="modal-date">Founder Chancellor Trophy | Sep 25th - 27th, 2023</p>
+                <p>SRMIST Men’s Football Team secured the Gold Medal in the prestigious Founder Chancellor Trophy Football Tournament held at Hindustan University, Chennai. From September 25th to 27th, 2023, SRMIST’s football squad showcased their exceptional teamwork, agility, and sportsmanship throughout the tournament. Their stellar performance culminated in a well-deserved victory, securing the Gold Medal and adding another feather to SRMIST’s cap of sporting achievements.</p>
+                <p>This victory underscores the dedication of the coaching staff and the hard work of every player, inspiring future athletes at SRM to strive for excellence.</p>
+            </div>
+        </div>
+
+        <div id="basketball-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <img src="Basketball.jpg" alt="Basketball Team" class="modal-img">
+                <h3>SRMIST Basketball Team Triumphs Over Vels University</h3>
+                <p class="modal-date">Final Score: 88-74</p>
+                <p>SRMIST’s Basketball Team showcased their dominance by securing a thrilling victory against Vels University in a highly competitive match. The game, held at Vels University Campus, saw SRMIST’s players demonstrating exceptional team coordination, precision shooting, and strong defense.</p>
+                <p>Led by their captain Prashanth, the team maintained a solid lead throughout the match, finishing with a final score of 88-74. The match's MVP, Madhan, delivered an outstanding performance, scoring 25 points and making crucial assists. With this victory, the SRMIST Basketball Team has once again proven their strength in collegiate basketball, continuing their legacy of excellence in sports.</p>
+            </div>
+        </div>
+
+        <div id="kabaddi-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <img src="Kabbadi.jpg" alt="Kabaddi Team" class="modal-img">
+                <h3>SRMIST Kabaddi Team Secures Bronze at Khelo India University Games</h3>
+                <p class="modal-date">Khelo India University Games-2022 | May 23rd - 26th, 2023</p>
+                <p>The pride of SRM is our Pro Kabaddi Team, which has once again proven its excellence on the national stage. The SRMIST Kabaddi Team secured the Bronze Medal at the 3rd Khelo India University Games-2022, organized by MYAS AIU & Sports Authority of India.</p>
+                <p>The tournament, held at Noida, New Delhi, witnessed SRM’s unstoppable performance. Displaying remarkable agility, strength, and strategic gameplay, the team dominated the competition and secured a prestigious spot on the podium. This victory marks another historic achievement for SRMIST, showcasing the university’s dedication to sports excellence.</p>
+            </div>
+        </div>
+
+    </main>
+
     <footer>
         <div class="container">
-            <p>&copy; 2025 Sports Pulse | SRM College</p>
+            <p>&copy; 2025 Sports Pulse | SRM College. All rights reserved.</p>
         </div>
     </footer>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // New Modal Logic
+        const newsBoxes = document.querySelectorAll('.news-box');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close-btn');
+
+        newsBoxes.forEach(box => {
+            box.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modalId = box.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.style.display = 'flex'; // Show modal
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                }
+            });
+        });
+
+        // Close modal when 'x' is clicked
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modal = btn.closest('.modal');
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = ''; // Restore background scrolling
+                }
+            });
+        });
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', (e) => {
+            modals.forEach(modal => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>
