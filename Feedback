@@ -3,60 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback - Sports Pulse</title>
+    <title>Feedback & Suggestions</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 </head>
+
 <body>
+
     <header>
-        <div class="container">
-            <h1>Sports Pulse</h1>
+        <div class="container header-container">
+            <div class="logo-group">
+                <div class="logo">
+                    <img src="SPlogo.jpg" alt="Sports Pulse Logo">
+                </div>
+                <h1>SPORTS PULSE <span style="font-weight: 500; font-size: 0.7em; color: #ccc;"></span></h1>
+            </div>
+            
             <nav>
                 <ul>
-                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="upcoming-events.html">Upcoming Events</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="register.html" class="btn-primary">Register Now</a></li>
+                    <li><a href="feedback.html" class="active">Feedback</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="feedback-section">
+    <main>
+        <section class="feedback-section">
+            <div class="container">
+                <div class="form-card">
+                    <h2>Your Voice Matters!</h2>
+                    <p style="text-align: center; margin-top: -20px; margin-bottom: 30px; color: #666;">
+                        Help us improve the sports experience at SRM. We welcome all suggestions.
+                    </p>
+
+                    <div id="feedback-message" class="message-area"></div>
+                    
+                    <form id="feedback-form">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="9876543210">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Feedback / Suggestion</label>
+                            <textarea id="message" name="message" required placeholder="I Suggest ...." rows="5"></textarea> 
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="submitBtn">
+                            Submit Feedback
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
         <div class="container">
-            <h2>Give Us Your Feedback</h2>
-            <form id="feedback-form">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone" name="phone" required>
-
-                <label for="message">Your Feedback</label>
-                <input id="message" name="message" required>
-
-                <button type="submit">Submit Feedback</button>
-            </form>
-
-            <!-- Message Display Area -->
-            <div id="feedback-message"></div>
+            <p>&copy; 2025 Sports Pulse | SRM College. All rights reserved.</p>
         </div>
-    </section>
+    </footer>
 
     <script>
         $(document).ready(function(){
             $("#feedback-form").submit(function(event){
-                event.preventDefault(); // Prevent form from refreshing the page
+                event.preventDefault(); // Stop native form submit
                 
+                const submitBtn = $("#submitBtn");
+                const messageDiv = $("#feedback-message");
+                const originalText = submitBtn.text();
+                
+                // Show loading state
+                submitBtn.prop('disabled', true).text('Sending...');
+                messageDiv.html('<p class="loading">Submitting your feedback...</p>');
+
                 $.ajax({
                     type: "POST",
-                    url: "submit_feedback.php",
+                    url: "submit_feedback.php", // Your PHP file for handling submission
                     data: $(this).serialize(),
                     success: function(response){
-                        $("#feedback-message").html(response).css("color", "green"); // Show success message
-                        $("#feedback-form")[0].reset(); // Clear form fields
+                        if (response.includes('Success')) {
+                            messageDiv.html('<p class="success-message">✅ Thank you for your feedback! We appreciate your input.</p>');
+                            $("#feedback-form")[0].reset(); 
+                        } else {
+                            messageDiv.html('<p class="error-message">⚠️ Submission failed: ' + response + '</p>');
+                        }
                     },
                     error: function(){
-                        $("#feedback-message").html("Something went wrong!").css("color", "red");
+                        messageDiv.html('<p class="error-message">❌ An AJAX error occurred. Check the server connection.</p>');
+                    },
+                    complete: function() {
+                        // Reset button state
+                        submitBtn.prop('disabled', false).text(originalText);
                     }
                 });
             });
