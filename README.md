@@ -64,8 +64,16 @@
 ## 🖼️ Screenshots
 
 ### 🏠 Home Page
-![Home Page](images/Homepage.png)
+![Home Page](images/Home.png)
 
+### 📅 Upcoming-Events Page
+![Upcoming_events Page](images/upcoming-events.png)
+
+### 🏠 Register Page
+![Register Page](images/register.png)
+
+### 📈 Feedback Page
+![Feedback Page](images/feedback.png)
 ---
 
 ## 🚀 How to Run
