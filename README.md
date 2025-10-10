@@ -64,7 +64,7 @@
 ## 🖼️ Screenshots
 
 ### 🏠 Home Page
-![Home Page](images/Home.png)
+![Home Page](images/home.png)
 
 ### 📅 Upcoming-Events Page
 ![Upcoming_events Page](images/upcoming-events.png)
